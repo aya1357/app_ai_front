@@ -1,3 +1,5 @@
+<img src="https://i.gyazo.com/9591516cb3abaa297644dbcde8d5bdcf.webp" width="600">
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
