@@ -1,24 +1,22 @@
 import { auth } from '@/contexts/auth'
-import { SignIn, SignOut } from '../../common/auth'
-import { Avatar, AvatarFallback, AvatarImage } from '../../ui/avatar'
-import { Button } from '../../ui/button'
+import { SigninBtn } from '../auth/signin/btn'
+import { SignoutBtn } from '../auth/signout/btn'
+import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
+import { Button } from '../ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
-} from '../../ui/dropdown-menu'
+} from '../ui/dropdown-menu'
 
 export default async function UserButton() {
   const session = await auth()
-  if (!session?.user) return <SignIn provider="Google" />
+  if (!session?.user) return <SigninBtn provider="Google" />
 
   return (
     <div className="flex gap-2 items-center">
-      <span className="hidden text-sm sm:inline-flex">
-        {session.user.email}
-      </span>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="relative w-8 h-8 rounded-full">
@@ -45,7 +43,7 @@ export default async function UserButton() {
             </div>
           </DropdownMenuLabel>
           <DropdownMenuItem>
-            <SignOut />
+            <SignoutBtn />
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

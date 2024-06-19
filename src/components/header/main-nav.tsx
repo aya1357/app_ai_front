@@ -1,43 +1,21 @@
 'use client'
 
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
 import React from 'react'
-import { Button } from '../../ui/button'
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  navigationMenuTriggerStyle,
-} from '../../ui/navigation-menu'
-import CustomLink from './custom-link'
+import { CustomLink } from '../common/custom-link'
+import { Button } from '../ui/button'
+import { NavigationMenuLink } from '../ui/navigation-menu'
 
 export function MainNav() {
   return (
-    <div className="flex gap-4 items-center">
+    <div className="flex items-center">
+      <Image src="/home/logo.png" height={40} width={40} alt="logo" />
       <CustomLink href="/">
-        <Button>Home</Button>
+        <Button variant="link" className="font-hannari -ml-3 text-xl">
+          校閲ちゃん
+        </Button>
       </CustomLink>
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              href="/server-example"
-              className={navigationMenuTriggerStyle()}
-            >
-              Server Side
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              href="/client-example"
-              className={navigationMenuTriggerStyle()}
-            >
-              Client Side
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
     </div>
   )
 }

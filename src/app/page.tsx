@@ -1,12 +1,11 @@
-import { auth } from '@/contexts/auth'
+import Image from 'next/image'
 
 export default async function Home() {
-  const session = await auth()
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <pre className="py-6 px-4 whitespace-pre-wrap break-all">
-        {JSON.stringify(session, null, 2)}
-      </pre>
-    </main>
+    <div className="bg-yellow-50 px-4 sm:px-0">
+      <div className="flex justify-center items-center">
+        <Image src="/home/hero.png" alt="hero" width={1000} height={1000} />
+      </div>
+    </div>
   )
 }
