@@ -74,3 +74,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* カスタムクラス */
+
+/* omake 手書き文字 */
+@font-face {
+  font-family: 'Hannari';
+  src: url('../app/fonts/omakebold.ttf') format('truetype');
+  font-display: swap;
+}
