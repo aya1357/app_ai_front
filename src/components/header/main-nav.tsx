@@ -10,7 +10,16 @@ import { NavigationMenuLink } from '../ui/navigation-menu'
 export function MainNav() {
   return (
     <div className="flex items-center">
-      <Image src="/home/logo.png" height={40} width={40} alt="logo" />
+      {/* コンソールの警告解消のため、style={{width: '100%', height: 'auto'}}を追加 */}
+      {/* has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio. */}
+      <Image
+        src="/home/logo.png"
+        height={40}
+        width={40}
+        style={{ width: '100%', height: 'auto' }}
+        alt="logo"
+        fetchPriority="high"
+      />
       <CustomLink href="/">
         <Button variant="link" className="font-hannari -ml-3 text-xl">
           校閲ちゃん
