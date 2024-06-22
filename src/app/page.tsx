@@ -1,5 +1,7 @@
 import Image from 'next/image'
-import { TextReviews } from '../components/home/textReviews'
+import { Cards } from '../components/home/card'
+import { Reviews } from '../components/home/reviews'
+import { Button } from '../components/ui/button'
 
 export default async function Home() {
   return (
@@ -9,7 +11,20 @@ export default async function Home() {
       </div>
 
       <div className="mt-12" />
-      <TextReviews />
+
+      <Reviews />
+
+      <Cards />
+
+      <div className="mt-20" />
+
+      <div className="text-sm flex sm:space-x-1 items-center justify-center">
+        <Button variant="link">利用規約</Button>
+        <Button variant="link">プライバシーポリシー</Button>
+        <Button variant="link">お問い合わせ</Button>
+      </div>
+
+      <div className="pt-6" />
     </div>
   )
 }
